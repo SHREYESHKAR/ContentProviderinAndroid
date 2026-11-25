@@ -69,7 +69,7 @@ AndroidManifest.xml
 ```
 MainActivity.java
 ```
-package com.example.contentprovider;
+package com.example.exp4mui;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -84,13 +84,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -110,7 +107,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1 && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             getPhoneContacts();
@@ -148,7 +145,11 @@ public class MainActivity extends AppCompatActivity
             }
             else
             {
-                textView.setText("KEERTHIVASAN S - 9003323469");
+                textView.setText("SHREYESH - 7811062574" +
+                        "\n AADHITHYA - 9885656788" +
+                        "\n AHAMED - 7856778542" +
+                        "\n SUJATHA - 8428423342" +
+                        "\n RUSHMAN - 8925213513");
                 Log.e("CONTACT_PROVIDER_DEMO", "No contacts found or cursor is null");
             }
         }
